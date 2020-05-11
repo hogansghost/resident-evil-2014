@@ -1,0 +1,1164 @@
+@charset UTF-8;
+
+/* Basic Reset Elements */
+div, span, object, iframe,
+h1, h2, h3, h4, h5, p, pre, a, img,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	vertical-align: baseline;
+	border: 0;
+}
+
+input, button, a {
+  -webkit-appearance:none;
+}
+
+html,
+body {
+	overflow: hidden;
+	margin: 0 auto;
+	padding: 0;
+	height: 100%;
+	background: #000;
+	
+	
+}
+
+	html {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	
+	*, *:before, *:after {
+		-webkit-box-sizing: inherit;
+		-moz-box-sizing: inherit;
+		box-sizing: inherit;
+	}
+	
+	body {
+		font: normal 12px Merriweather,Cardo, Helvetica, Arial, sans-serif;
+		color: #fff;
+		text-shadow: 0 0 20px rgba(0,0,0,.85);
+	}
+	
+	html, body {
+		width: 100px;
+		*width: 100%;
+		max-width: 100%;
+		min-width: 100%;
+	}
+		
+		img {
+			max-width: 100%;
+		}
+		
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
+		
+		
+		.cf:before,
+		.cf:after {
+			content: " ";
+			display: table;
+		}
+
+		.cf:after {
+			clear: both;
+		}
+		
+		
+		
+		
+		
+		
+		.clear {
+			list-style: none;
+			list-style-type: none;
+		}
+
+
+
+
+
+
+.target-area,
+.mask-table {
+	background-position: bottom left;
+	background-position: 10% 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: contain;
+}
+
+.target-area {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	background-image: url(http://hogans.me.uk/ebuzzing/fps/css/img/bg.jpg);
+	background-color: #000;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	z-index: 0;
+}
+
+	.mask {
+		position:absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		pointer-events: none;
+	}
+	
+	.mask-table {
+		background-image: url(http://hogans.me.uk/ebuzzing/fps/css/img/table.png);
+	}
+
+	.score {
+		position: fixed;
+		top: 0;
+		left: 0;
+		font-size: 32px;
+		pointer-events: none;
+	}
+	.health {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 250px;
+		height: 120px;
+		background: url(http://hogans.me.uk/ebuzzing/fps/css/img/health-fine.gif) no-repeat center;
+		background: url(http://hogans.me.uk/ebuzzing/fps/css/img/health-bg.png) no-repeat center;
+		background: transparent;
+		background-size: contain;
+		pointer-events: none;
+	}
+	
+		.health-paper {
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			width: 200%;
+			height: 100%;
+			background: url(http://hogans.me.uk/ebuzzing/fps/css/img/health-fine.png) repeat-x center left;
+			-webkit-animation: test 2s infinite linear;
+		}
+			
+			@-webkit-keyframes test {
+				0%{
+					background-position: 0% 0%;
+				}
+				100%{
+					background-position: -100% 0%;
+				}
+			}
+	
+	.health:after,
+	.health:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		opacity: 0;
+	}
+	
+		.health:before {
+			background-image: url(http://hogans.me.uk/ebuzzing/fps/css/img/health-caution.gif);
+		}
+		.health:after {
+			background-image: url(http://hogans.me.uk/ebuzzing/fps/css/img/health-danger.gif);
+		}
+		.health.caution:before {
+			opacity: 1;
+		}
+		.health.danger:after {
+			opacity: 1;
+		}
+	
+	.shots {
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 6%;
+		padding: 5px;
+		font-size: 32px;
+		text-align: right;
+		pointer-events: none;
+	}
+		.magazine {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			-webkit-transform: translate3d(0,0,0);
+			transform: translate3d(0,0,0);
+			pointer-events: none;
+		}
+		
+		.reload-button {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 15%;
+			height: 26%;
+			background: url(http://hogans.me.uk/ebuzzing/fps/css/img/reload.png) no-repeat top center;
+			background-size: contain;
+			max-width: 140px;
+			max-height: 140px;
+		}
+		
+			.reload-button:after {
+				content: "RELOAD";
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				text-align: center;
+			}
+	
+		.bulletcount-bullet {
+			display: inline-block;
+			margin: 0 auto;
+			width: 1.5%;
+			height: 100%;
+			background: url(http://hogans.me.uk/ebuzzing/fps/css/img/bulletcase.png) no-repeat center;
+			background-size: contain;
+			pointer-events: none;
+		}
+	
+	.player-message {
+		position: fixed;
+		top: 10%;
+		left: 0;
+		width: 100%;
+		text-align: center;
+		text-transform: uppercase;
+		color: #fff;
+		font-size: 64px;
+		font-weight: normal;
+		pointer-events: none;
+	}
+	
+	.bite {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: url(http://hogans.me.uk/ebuzzing/fps/css/img/bite.png) no-repeat center;
+		background-size: cover;
+		pointer-events: none;
+		display: none;
+		-webkit-transform:translate3d(0,0,0);
+		transform:translate3d(0,0,0);
+		z-index: 4;
+	}
+	.damage {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: url(http://hogans.me.uk/ebuzzing/fps/css/img/damage.png) no-repeat center;
+		background-size: cover;
+		pointer-events: none;
+		opacity: 0;
+		-webkit-transition: .5s;
+		transition: .5s;
+		-webkit-transform:translate3d(0,0,0);
+		transform:translate3d(0,0,0);
+		z-index: 4;
+	}
+	
+		.caution .damage {
+			opacity: .5;
+		}
+		.danger .damage {
+			opacity: .9;
+		}
+
+	.firearm {
+		position: absolute;
+		bottom: 0px;
+		left: 50%;
+		margin: -10px 0 0 -150px;
+		margin: -10px 0 0 -50px;
+		width: 300px;
+		height: 200px;
+		background-repeat: no-repeat;
+		background-position: top left;
+		background-image: url(http://hogans.me.uk/ebuzzing/fps/css/img/firearm-center.png);
+		background-size: contain;
+		z-index: 5;
+		pointer-events: none;
+	}
+	
+		.firearm:before,
+		.firearm:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			width: 300px;
+			height: 200px;
+			background-repeat: no-repeat;
+			background-position: top left;
+			background-size: contain;
+			opacity: 0;
+		}
+		
+		.firearm:before {
+			background-image: url(http://hogans.me.uk/ebuzzing/fps/css/img/muzzle-flare.png);
+			background-size: cover;
+			top: -174px;
+			left: -133px;
+			width: 400px;
+			height: 400px;
+			
+			-webkit-animation: muzzleRotate 8s linear infinite;
+			-moz-animation: muzzleRotate 8s linear infinite;
+			animation: muzzleRotate 8s linear infinite;
+			
+		}
+		
+			@-webkit-keyframes muzzleRotate {
+				0% {
+					-webkit-transform: rotate(0deg);
+				}
+				100% {
+					-webkit-transform: rotate(360deg);
+				}
+			}
+			@-moz-keyframes muzzleRotate {
+				0% {
+					-moz-transform: rotate(0deg);
+				}
+				100% {
+					-moz-transform: rotate(360deg);
+				}
+			}
+			@keyframes muzzleRotate {
+				0% {
+					transform: rotate(0deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+		
+		.firearm:after {
+			background-image: url(http://hogans.me.uk/ebuzzing/fps/css/img/firearm-center.png);
+			opacity: 1;
+		}
+		.fire.firearm:before{
+			opacity: 1;
+		}
+		.fire.firearm{
+			background: transparent;
+		}
+		.empty.firearm:after,
+		.fire.firearm:after{
+			background-image: url(http://hogans.me.uk/ebuzzing/fps/css/img/firearm-center-empty.png);
+		}
+		
+		.firearm[data-position="left"] {
+			background-image: url(http://hogans.me.uk/ebuzzing/fps/css/img/firearm-left.png);
+		}
+		.firearm[data-position="center"] {
+			background-image: url(http://hogans.me.uk/ebuzzing/fps/css/img/firearm-center.png);
+		}
+		.empty.firearm[data-position="center"] ,
+		.fire.firearm[data-position="center"] {
+			background-image: none;
+		}
+		.firearm[data-position="right"] {
+			background-image: url(http://hogans.me.uk/ebuzzing/fps/css/img/firearm-right.png);
+		}
+	
+	.enemy {
+		position: absolute;
+		height: 600px;
+		width: 300px;
+		height: 70%;
+		width: 18%;
+		margin: 0 0 0 -9%;
+		background-repeat: no-repeat;
+		background-position: bottom center;
+		background-size: contain;
+		pointer-events: none;
+		-webkit-transform:translate3d(0,0,0);
+		transform:translate3d(0,0,0);
+	}
+	
+		.enemy:before {
+			content: '';
+			position: absolute;
+			bottom: -1%;
+			left: 21%;
+			border-radius: 100%;
+			width: 70%;
+			height: 16%;
+			-webkit-transform: rotate(5deg);
+			transform: rotate(5deg);
+			background: rgba(0,0,0,.3);
+			box-shadow: 0 0 20px 10px rgba(0,0,0,.3);
+		}
+		
+		.enemy:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background-repeat: no-repeat;
+			background-position: bottom center;
+			background-size: contain;
+			pointer-events: none;
+		}
+	
+		.enemy01,
+		.enemy01:after {
+			background-image: url(http://hogans.me.uk/ebuzzing/fps/css/img/enemy01.png);
+		}
+		.enemy02,
+		.enemy02:after {
+			background-image: url(http://hogans.me.uk/ebuzzing/fps/css/img/enemy02.png);
+		}
+		.enemy03,
+		.enemy03:after {
+			background-image: url(http://hogans.me.uk/ebuzzing/fps/css/img/enemy03.png);
+		}
+		.enemy04,
+		.enemy04:after {
+			background-image: url(http://hogans.me.uk/ebuzzing/fps/css/img/enemy04.png);
+		}
+		.enemy05,
+		.enemy05:after {
+			background-image: url(http://hogans.me.uk/ebuzzing/fps/css/img/enemy05.png);
+		}
+		
+		.enemy[data-type="hunter"]{
+			width: 23%;
+			margin: 0 0 0 -11%;
+		}
+	
+		.hitbox {
+			position: absolute;
+			display: block;
+			pointer-events: all;
+		}
+		
+		.hitbox.head {
+			z-index: 1;
+		}
+		
+			.enemy .head {
+				top: 0%;
+				left: 37%;
+				height: 17%;
+				width: 26%;
+				-webkit-transform: rotate(-13deg);
+				transform: rotate(-13deg);
+				border-radius: 100%;
+			}
+			
+			.enemy .body {
+				top: 15%;
+				left: 25%;
+				width: 40%;
+				height: 40%;
+				-webkit-transform: rotate(4deg);
+				transform: rotate(4deg);
+				border-radius: 38% 21% 2% 18%;
+
+			}
+			
+				.enemy .arm.left {
+					top: 16%;
+					left: 21%;
+					width: 9%;
+					height: 38%;
+					-webkit-transform: rotate(9deg);
+					transform: rotate(9deg);
+					border-radius: 42% 27% 10% 71%;
+				}
+				
+				.enemy .arm.right {
+					top: 20%;
+					left: 63%;
+					width: 18%;
+					height: 45%;
+					-webkit-transform: rotate(4deg);
+					transform: rotate(4deg);
+					border-radius: 0% 200% 100% 0%;
+				}
+				
+				.enemy .leg.left {
+					top: 54%;
+					left: 25%;
+					width: 19%;
+					height: 44%;
+					-webkit-transform: rotate(-4deg);
+					transform: rotate(-4deg);
+					border-radius: 13% 0 52% 34%;
+				}
+				
+				.enemy .leg.right {
+					top: 52%;
+					left: 50%;
+					width: 21%;
+					height: 36%;
+					-webkit-transform: rotate(-20deg);
+					transform: rotate(-20deg);
+					border-radius: 0 0 38% 64%;
+				}
+				
+				
+			.enemy02 .head {
+				top: 0%;
+				left: 37%;
+				height: 17%;
+				width: 26%;
+				-webkit-transform: rotate(-13deg);
+				transform: rotate(-13deg);
+				border-radius: 100%;
+			}
+			
+			.enemy02 .body {
+				top: 15%;
+				left: 25%;
+				width: 40%;
+				height: 40%;
+				-webkit-transform: rotate(4deg);
+				transform: rotate(4deg);
+				border-radius: 38% 21% 2% 18%;
+
+			}
+			
+				.enemy02 .arm.left {
+					top: 16%;
+					left: 18%;
+					width: 9%;
+					height: 38%;
+					-webkit-transform: rotate(9deg);
+					transform: rotate(9deg);
+					border-radius: 42% 27% 10% 71%;
+				}
+				
+				.enemy02 .arm.right {
+					top: 20%;
+					left: 63%;
+					width: 18%;
+					height: 45%;
+					-webkit-transform: rotate(4deg);
+					transform: rotate(4deg);
+					border-radius: 0% 200% 100% 0%;
+				}
+				
+				.enemy02 .leg.left {
+					top: 54%;
+					left: 25%;
+					width: 19%;
+					height: 44%;
+					-webkit-transform: rotate(-4deg);
+					transform: rotate(-4deg);
+					border-radius: 13% 0 52% 34%;
+				}
+				
+				.enemy02 .leg.right {
+					top: 52%;
+					left: 50%;
+					width: 21%;
+					height: 36%;
+					-webkit-transform: rotate(-20deg);
+					transform: rotate(-20deg);
+					border-radius: 0 0 38% 64%;
+				}
+				
+			.enemy03 .head {
+				top: 26%;
+				left: 55%;
+				height: 20%;
+				width: 28%;
+				-webkit-transform: rotate(27deg);
+				transform: rotate(27deg);
+				border-radius: 100%;
+			}
+			
+			.enemy03 .body {
+				top: 17%;
+				left: 25%;
+				width: 61%;
+				height: 33%;
+				-webkit-transform: rotate(4deg);
+				transform: rotate(4deg);
+				border-radius: 65% 44% 57% 66%;
+			}
+			
+				.enemy03 .arm.left {
+					top: 26%;
+					left: 2%;
+					width: 26%;
+					height: 69%;
+					-webkit-transform: rotate(4deg);
+					transform: rotate(4deg);
+					border-radius: 100% 62% 32% 100%;
+				}
+				
+				.enemy03 .arm.right {
+					top: 23%;
+					left: 79%;
+					width: 18%;
+					height: 45%;
+					-webkit-transform: rotate(-4deg);
+					transform: rotate(-4deg);
+					border-radius: 54% 81% 100% 80%;
+				}
+				
+				.enemy03 .leg.left {
+					top: 46%;
+					left: 22%;
+					width: 26%;
+					height: 32%;
+					-webkit-transform: rotate(9deg);
+					transform: rotate(9deg);
+					border-radius: 51% 7% 52% 34%;
+				}
+				
+				.enemy03 .leg.right {
+					top: 48%;
+					left: 52%;
+					width: 32%;
+					height: 47%;
+					-webkit-transform: rotate(-5cdeg);
+					transform: rotate(-5deg);
+					border-radius: 23% 55% 50% 112%;
+				}
+				
+			
+			.enemy04 .head {
+				top: 1%;
+				left: 40%;
+				height: 14%;
+				width: 20%;
+				-webkit-transform: rotate(5deg);
+				transform: rotate(5deg);
+				border-radius: 100%;
+			}
+			
+			.enemy04 .body {
+				top: 14%;
+				left: 31%;
+				width: 39%;
+				height: 35%;
+				-webkit-transform: rotate(-4deg);
+				transform: rotate(-4deg);
+				border-radius: 24% 21% 2% 18%;
+			}
+			
+				.enemy04 .arm.left {
+					top: 18%;
+					left: 13%;
+					width: 23%;
+					height: 10%;
+					-webkit-transform: rotate(-18deg);
+					transform: rotate(-18deg);
+					border-radius: 56% 4% 95% 14%;
+				}
+				
+				.enemy04 .arm.right {
+					top: 13%;
+					left: 68%;
+					width: 12%;
+					height: 40%;
+					-webkit-transform: rotate(-7deg);
+					transform: rotate(-7deg);
+					border-radius: 0% 98% 100% 39%;
+				}
+				
+				.enemy04 .leg.left {
+					top: 47%;
+					left: 35%;
+					width: 19%;
+					height: 52%;
+					-webkit-transform: rotate(-3deg);
+					transform: rotate(-3deg);
+					border-radius: 13% 0 52% 34%;
+				}
+				
+				.enemy04 .leg.right {
+					top: 47%;
+					left: 57%;
+					width: 19%;
+					height: 45%;
+					-webkit-transform: rotate(-8deg);
+					transform: rotate(-8deg);
+					border-radius: 0 0 38% 64%;
+				}
+				
+				
+			.enemy05 .head {
+				top: 6%;
+				left: 30%;
+				height: 17%;
+				width: 24%;
+				-webkit-transform: rotate(2deg);
+				transform: rotate(2deg);
+				border-radius: 100%;
+			}
+			
+			.enemy05 .body {
+				top: 21%;
+				left: 35%;
+				width: 35%;
+				height: 36%;
+				-webkit-transform: rotate(-10deg);
+				transform: rotate(-10deg);
+				border-radius: 18% 40% 50% 14%;
+			}
+			
+				.enemy05 .arm.left {
+					top: 24%;
+					left: 20%;
+					width: 16%;
+					height: 40%;
+					-webkit-transform: rotate(-8deg);
+					transform: rotate(-8deg);
+					border-radius: 75% 4% 95% 14%;
+				}
+				
+				.enemy05 .arm.right {
+					top: 24%;
+					left: 64%;
+					width: 18%;
+					height: 47%;
+					-webkit-transform: rotate(2deg);
+					transform: rotate(2deg);
+					border-radius: 0% 100% 100% 39%;
+				}
+				
+				.enemy05 .leg.left {
+					top: 55%;
+					left: 33%;
+					width: 16%;
+					height: 36%;
+					-webkit-transform: rotate(0deg);
+					transform: rotate(0deg);
+					border-radius: 41% 15% 59% 34%;
+				}
+				
+				.enemy05 .leg.right {
+					top: 54%;
+					left: 50%;
+					width: 18%;
+					height: 43%;
+					-webkit-transform: rotate(-3deg);
+					transform: rotate(-3deg);
+					border-radius: 44% 0% 38% 64%;
+				}
+			
+		
+		.enemy01 .head {
+			top: 0%;
+			left: 14%;
+			height: 17%;
+			width: 26%;
+			-webkit-transform: rotate(-44deg);
+			transform: rotate(-44deg);
+			border-radius: 100%;
+		}
+		
+		.enemy01 .body {
+			top: 12%;
+			left: 22%;
+			width: 46%;
+			height: 42%;
+			-webkit-transform: rotate(-15deg);
+			transform: rotate(-15deg);
+
+			border-radius: 31% 31% 25% 0;
+		}
+				
+		.enemy01 .arm.left {
+			top: 19%;
+			left: 12%;
+			width: 13%;
+			height: 38%;
+			-webkit-transform: rotate(-9deg);
+			transform: rotate(-9deg);
+			border-radius: 31% 0 0 0;
+		}
+		
+		.enemy01 .arm.right {
+			top: 13%;
+			left: 68%;
+			width: 13%;
+			height: 38%;
+			-webkit-transform: rotate(-16deg);
+			transform: rotate(-16deg);
+
+			border-radius: 31% 29% 0 0;
+		}
+		
+		.enemy01 .leg.left {
+			top: 52%;
+			left: 30%;
+			width: 17%;
+			height: 38%;
+			-webkit-transform: rotate(8deg);
+			transform: rotate(8deg);
+			border-radius: 13% 0 52% 34%;
+		}
+		
+		.enemy01 .leg.right {
+			top: 51%;
+			left: 50%;
+			width: 16%;
+			height: 33%;
+			-webkit-transform: rotate(3deg);
+			transform: rotate(3deg);
+			border-radius: 0 0 38% 64%;
+		}
+
+	.bullet-hole {
+		position: absolute;
+		height: 30px;
+		width: 30px;
+		margin: -15px 0 0 -15px;
+		background: url(http://hogans.me.uk/ebuzzing/fps/css/img/bullet.png) no-repeat center;
+		background-size: cover;
+		-webkit-transform:translate3d(0,0,0);
+		transform:translate3d(0,0,0);
+		z-index: 4;
+		pointer-events: none;
+	}
+	.blood-hole {
+		position: absolute;
+		height: 200px;
+		width: 400px;
+		height: 24%;
+		width: 14%;
+		margin: -8% 0 0 -7%;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		-webkit-transform:translate3d(0,0,0);
+		transform:translate3d(0,0,0);
+		pointer-events: none;
+	}
+		
+		.blood-1 {
+			background-image: url(http://hogans.me.uk/ebuzzing/fps/css/img/blood-1.png);
+		}
+		.blood-2 {
+			background-image: url(http://hogans.me.uk/ebuzzing/fps/css/img/blood-2.png);
+		}
+		.blood-3 {
+			background-image: url(http://hogans.me.uk/ebuzzing/fps/css/img/blood-3.png);
+		}
+		.blood-4 {
+			background-image: url(http://hogans.me.uk/ebuzzing/fps/css/img/blood-4.png);
+		}
+		
+	
+	
+	
+	
+	
+	
+			
+	.enemyStagger01 {
+		-webkit-animation: enemyStagger 5s linear infinite;
+		-webkit-animation-fill-mode: both;
+	}
+	.enemyStagger02 {
+		-webkit-animation: enemyStagger2 5s linear infinite;
+		-webkit-animation-fill-mode: both;
+	}
+	.enemyStagger03 {
+		-webkit-animation: enemyStagger3 5s linear infinite;
+		-webkit-animation-fill-mode: both;
+	}
+	
+	.enemyStagger04 {
+		-webkit-animation: enemyStagger4 5s linear infinite;
+		-webkit-animation-fill-mode: both;
+	}
+	
+	@-webkit-keyframes enemyStagger {
+		0% {
+			-webkit-transform: translate3d(0px,0px,0px);
+		}
+		20% {
+			-webkit-transform: translate3d(8px,-5px,0px);
+		}
+		50%{
+			-webkit-transform: translate3d(0px,0px,0px);
+		}
+		80%{
+			-webkit-transform: translate3d(-10px,-3px,0px);
+		}
+		100%{
+			-webkit-transform: translate3d(0px,0px,0px);
+		}
+	}
+	@-webkit-keyframes enemyStagger2 {
+		0% {
+			-webkit-transform: translate3d(0px,0px,0px);
+		}
+		20% {
+			-webkit-transform: translate3d(5px,3px,0px);
+		}
+		50%{
+			-webkit-transform: translate3d(0px,0px,0px);
+		}
+		80%{
+			-webkit-transform: translate3d(2px,2px,0px);
+		}
+		100%{
+			-webkit-transform: translate3d(0px,0px,0px);
+		}
+	}
+	@-webkit-keyframes enemyStagger3 {
+		0% {
+			-webkit-transform: translate3d(0px,0px,0px);
+		}
+		20% {
+			-webkit-transform: translate3d(2px,-6px,0px);
+		}
+		50%{
+			-webkit-transform: translate3d(0px,0px,0px);
+		}
+		80%{
+			-webkit-transform: translate3d(-4px,-2px,0px);
+		}
+		100%{
+			-webkit-transform: translate3d(0px,0px,0px);
+		}
+	}
+	
+	.health-item {
+		position: absolute;
+		background: url(http://hogans.me.uk/ebuzzing/fps/css/img/herb-green.png) no-repeat center;
+		background-size: contain;
+		height: 32%;
+		width: 13%;
+		top: 55%;
+		left: 25%;
+		z-index: 3;
+	}
+		
+		.health-item:before {
+			content: '';
+			position: absolute;
+			bottom: 0%;
+			left: 34%;
+			border-radius: 100%;
+			width: 40%;
+			height: 12%;
+			background: rgba(0,0,0,.5);
+			box-shadow: 0 0 20px 10px rgba(0,0,0,.5);
+		}
+	
+		.health-item:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: url(http://hogans.me.uk/ebuzzing/fps/css/img/herb-green.png) no-repeat center;
+			background-size: contain;
+		}
+		
+	.health-item.health-mixed,
+	.health-item.health-mixed:after {
+		background-image: url(http://hogans.me.uk/ebuzzing/fps/css/img/herb-mixed.png);
+		background-position: bottom center;
+	}
+	
+	
+	
+	
+	/* Game Over */
+	.gameover {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: none;
+		text-align: center;
+		background:url(http://hogans.me.uk/ebuzzing/fps/css/img/gameover.jpg) no-repeat center #000;
+		background-size: cover;
+	}
+	
+		.gameover-copy {
+			position: absolute;
+			top: 45%;
+			left: 0;
+			right: 0;
+			padding: 15px;
+		}
+		
+		.portrait {
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			display: none;
+			text-align: center;
+			background: #000;
+			z-index: 100000;
+		}
+		
+		
+		
+		
+		
+		
+		.loading {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: #000;
+			color: #fff;
+			z-index: 10000;
+		}
+		
+		.screen {
+			display: none;
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background: rgba(0,0,0,.85);
+			text-align: center;
+			font-size: 1.3em;
+		}
+		
+			.screen a {
+				display: block;
+				padding: .5em 1em;
+			}
+		
+		
+		.mask, .firearm, .shots {
+			z-index: 4;
+		}
+		
+	@media screen and (max-device-width:1280px)and(orientation:portrait){
+		.portrait {
+			/*display: block;*/
+		}
+	}
+	
+	@media screen and (max-device-width:1280px){
+		.reload-button {
+			display: block;
+		}
+		
+		.player-message {
+			font-size: 2em;
+		}
+		
+		.target-area {
+			background-image: url(http://hogans.me.uk/ebuzzing/fps/css/img/mbg.jpg);
+		}
+		
+			.mask-table {
+				background-image: url(http://hogans.me.uk/ebuzzing/fps/css/img/mtable.png);
+			}
+			
+			.damage {
+				background-image: url(http://hogans.me.uk/ebuzzing/fps/css/img/mdamage.png);
+			}
+		
+		.firearm {
+			margin: -10px 0 0 -75px;
+			width: 150px;
+			height: 100px;
+			display: none;
+		}
+		
+		.health {
+			font-size: 20px;
+		}
+		
+		.score {
+			top: auto;
+			bottom: 0;
+		}
+		.shots {
+			top: auto;
+			bottom: 0;
+		}
+		
+		.gameover-copy {
+			font-size: 40px !important;
+		}
+		
+.enemy {
+
+}
+
+
+.fire.firearm,
+.firearm:before,
+.firearm:after,
+.empty.firearm:after,
+.fire.firearm:after,
+.firearm[data-position="center"] ,
+.empty.firearm[data-position="center"] ,
+.fire.firearm[data-position="center"] {
+	display: none;
+	background-image: url(http://hogans.me.uk/ebuzzing/fps/css/img/firearm-center.png) !important;
+	background-size: contain !important;
+	-webkit-animation: none !important;
+}
+
+
+.firearm:before,
+.firearm:after {
+	display: none;
+}
+
+.health {
+	display: none;
+}
+
+.shots {
+	height: 20%;
+	padding: 5px 0;
+}
+
+	.bulletcount-bullet {
+		width: 6.66667%;
+	}
+	}

@@ -1,0 +1,229 @@
+/* Redesign Placeholder CSS */
+html, body {
+	margin: 0px auto;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+	font: normal 13px/2em "Century Gothic", CenturyGothic, AppleGothic, "Arial", sans-serif;
+	color: #373434;
+	color: #747070;
+}
+
+	h1,h2,h3,h4,h5,h6 {
+		color: #1b1818;
+	}
+	
+	section.footer-space {
+		position: relative;
+		overflow: hidden;
+		padding: 0px 0px 50px 0px;
+		min-height: 100%;
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+	}
+	
+	.container {
+		margin: 0px auto;
+		padding: 20px;
+		width: 100%;
+		max-width: 960px;
+		text-align: center;
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+	}
+	
+		.container h2 {
+			font-size: 3em;
+			line-height: normal;
+		}
+		
+		.pixel {
+			position: relative;
+			display: inline-block;
+			font-weight: bold;
+			transform: rotate(-3deg);
+			-ms-transform: rotate(-3deg);
+			-webkit-transform: rotate(-3deg);
+		}
+	
+	.face-container {
+		position: relative;
+		margin: 80px auto 0px auto;
+		padding: 30px 0px;
+		width: 100%;
+		text-align: center;
+		background-color: #2e8893;
+		background-color: #f3f3f3;
+	}
+	
+		.face-text {
+			position: relative;
+			width: 100%;
+			max-width: 750px;
+			margin: 0px auto;
+			padding: 0px;
+			
+		}
+		
+		.face {
+			position: relative;
+			overflow: hidden;
+			margin: 0px auto;
+			padding: 0px;
+			width: 400px;
+			height: 400px;
+			background: url(img/face.png) no-repeat center center;
+			background-size: contain;
+			border-radius: 100%;
+		}
+		
+			.typing {
+				position: absolute;
+				overflow: hidden;
+				display: none;
+				bottom: 0px;
+				color: #FF7800;
+				text-shadow: 0px 0px 1px #000;
+				text-transform: capitalize;
+				font-family: TrashCinemaBB, "Arial", sans-serif;
+				font-size: 3em;
+				letter-spacing: 5px;
+			}
+			
+				.type-1 {
+					left: 40px;
+					transform: rotate(-11deg);
+					-ms-transform: rotate(-11deg);
+					-webkit-transform: rotate(-11deg);
+				}
+				
+				.type-2 {
+					right: 32px;
+					transform: rotate(17deg);
+					-ms-transform: rotate(17deg);
+					-webkit-transform: rotate(17deg);
+				}
+				
+				.type-3 {
+					left: 5px;
+					transform: rotate(-21deg);
+					-ms-transform: rotate(-21deg);
+					-webkit-transform: rotate(-21deg);
+				}
+				
+		.type-3.type,
+		.type-1.type {
+			-webkit-animation-name: text_float;
+			-webkit-animation-duration: 1500ms;
+			-webkit-animation-iteration-count: 1;
+			-webkit-animation-timing-function: linear;
+			
+			-moz-animation-name: text_float;
+			-moz-animation-duration: 1500ms;
+			-moz-animation-iteration-count: 1;
+			-moz-animation-timing-function: linear;
+			
+			-ms-animation-name: text_float;
+			-ms-animation-duration: 1500ms;
+			-ms-animation-iteration-count: 1;
+			-ms-animation-timing-function: linear;
+
+			animation-name: text_float;
+			animation-duration: 1500ms;
+			animation-iteration-count: 1;
+			animation-timing-function: linear;
+		}
+			
+			/* Title Slide */
+			@-ms-keyframes text_float {
+				0% { bottom: 0; }
+				100% { bottom: 100%; }
+			}
+			@-moz-keyframes text_float {
+				0% { bottom: 0; }
+				100% { bottom: 100%; }
+			}
+			@-webkit-keyframes text_float {
+				0% { bottom: 0; }
+				100% { bottom: 100%; }
+			}
+			@keyframes text_float {
+				0% { bottom: 0; }
+				100% { bottom: 100%; }
+			}
+			
+		.type-2.type {
+			-webkit-animation-name: text_float_f;
+			-webkit-animation-duration: 1500ms;
+			-webkit-animation-iteration-count: 1;
+			-webkit-animation-timing-function: linear;
+			
+			-moz-animation-name: text_float_f;
+			-moz-animation-duration: 1500ms;
+			-moz-animation-iteration-count: 1;
+			-moz-animation-timing-function: linear;
+			
+			-ms-animation-name: text_float_f;
+			-ms-animation-duration: 1500ms;
+			-ms-animation-iteration-count: 1;
+			-ms-animation-timing-function: linear;
+
+			animation-name: text_float_f;
+			animation-duration: 1500ms;
+			animation-iteration-count: 1;
+			animation-timing-function: linear;
+		}
+			
+			/* Title Slide */
+			@-ms-keyframes text_float_f {
+				0% { bottom: 0; }
+				100% { bottom: 100%; }
+			}
+			@-moz-keyframes text_float_f {
+				0% { bottom: 0; }
+				100% { bottom: 100%; }
+			}
+			@-webkit-keyframes text_float_f {
+				0% { bottom: 0; }
+				100% { bottom: 100%; }
+			}
+			@keyframes text_float_f {
+				0% { bottom: 0; }
+				100% { bottom: 100%; }
+			}
+			
+		footer {
+			position: absolute;
+			bottom: 0px;
+			left: 0px;
+			right: 0px;
+			overflow: hidden;
+			margin: 0px auto;
+			padding: 4px 0px;
+			font-size: .75em;
+			line-height: 1em;
+			text-align: center;
+		}
+		
+			footer > p {
+				margin: 0px auto;
+				padding: 3px 0px;
+			}
+	
+	@media screen and (max-width: 640px){
+		.face-container {
+			margin: 10px auto 0px auto;
+		}
+		
+		.face {
+			width: 250px;
+			height: 250px;
+		}
+		
+		.typing {
+			font-size: 2em;
+		}
+	}
